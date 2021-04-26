@@ -6,9 +6,9 @@ public class CameraInputHandler : MonoBehaviour
 {
     public Camera target;
 
-    public float roll = 0.0f;
+    public Transform cameraTransform;
 
-    float sumX = 0.0f, sumY = 0.0f;
+    public float sumX = 0.0f, sumY = 0.0f;
 
     void Update()
     {
@@ -27,6 +27,7 @@ public class CameraInputHandler : MonoBehaviour
             sumY = -90.0f;
         }
 
-        target.transform.rotation = Quaternion.Euler(0.0f, 0.0f, roll) * Quaternion.Euler(-sumY, sumX, 0.0f);
+        target.transform.position = cameraTransform.position;
+        target.transform.rotation = cameraTransform.rotation * Quaternion.Euler(-sumY, sumX, 0.0f);
     }
 }
