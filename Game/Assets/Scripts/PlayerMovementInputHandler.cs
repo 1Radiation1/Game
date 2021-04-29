@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerMovementInputHandler : MonoBehaviour
+public class PlayerMovementInputHandler : NetworkBehaviour
 {
     public Rigidbody playerRb;
 
